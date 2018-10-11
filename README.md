@@ -1,6 +1,6 @@
-# Facebook Nuke It - Python
+# Instagram Nuke It - Python
 
-A simple script to delete and unlike all one's user activity on facebook. Runs on Python 2.7. 
+A simple script to untag and unlike a users Instagram photod. Runs on Python 2.7. 
 
 ## Getting Started
 
@@ -42,8 +42,8 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-git clone https://github.com/adriangoris/facebook-nukeit-python.git
-cd facebook-nukeit-python
+git clone https://github.com/levistrange/instagram-nukeit-python.git
+cd instagram-nukeit-python
 pip install -r requirements.txt
 cp config.cfg.example config.cfg
 ```
@@ -52,17 +52,17 @@ Now populate the config.cfg file with username, password and dates you want to b
 
 ```
 CONFIG.cfg
-[facebook]
+[instagram]
 username = 
 password =
 start_date = 2011-01-01
 end_date = 2018-10-01
 ```
 
-Then run the python facebook nukeit file
+Then run the python instagram nukeit file
 
 ```
-python facebook-nukeit.py
+python instagram-nukeit.py
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
