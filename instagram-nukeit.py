@@ -17,6 +17,14 @@ from selenium.common.exceptions import NoSuchElementException
 class instagramNukeIt():
 
     def __init__(self, username, password):
+
+        if username == None:
+            print "no username provided in config, please add now"
+            return False
+        if password == None:
+            print "no password provided in config"
+            return False
+
         self.username = username
         self.password = password
         chrome_options = webdriver.ChromeOptions()
@@ -40,12 +48,31 @@ class instagramNukeIt():
         c = driver.find_element_by_xpath('//button[text()="Log in"]')
         c.click()
         sleep(2)
-
-    def unlike_photo(self, link):
         
-    def untag_photo(self, link):
+    def untag_photo(self):
+        driver = self.driver
+        driver.get("https://www.instagram.com/" + self.username  + "/tagged/")
+        # Click the Tagged photos button
+        # loop the photos, and remove the 
+        #driver.find_element_by_xpath()
        
 
+def main():
+    config = ConfigParser.ConfigParser()
+    config.read('config.cfg')
+    ig_username = config.get('instagram', 'username')
+    ig_password = config.get('instagram', 'password')
+    start_date = config.get('instagram', 'start_date')
+    end_date = config.get('instagram', 'end_date')
 
-TestUser = igNukeIt("aaa", "hello");
-TestUser.login()
+    igni = instagramNukeIt(ig_username, ig_password)
+    igni.login()
+
+
+if __name__ == '__main__':
+    main()
+    
+# TestUser = instagramNukeIt("aaa", "hello")
+# TestUser.login()
+# TestUser.untag_photo()
+# TestUser.closeBrowser()
