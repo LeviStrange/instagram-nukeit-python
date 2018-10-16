@@ -51,8 +51,6 @@ CONFIG.cfg
 [instagram]
 username = 
 password =
-start_date = 2011-01-01
-end_date = 2018-10-01
 ```
 
 Then run the python instagram nukeit file
