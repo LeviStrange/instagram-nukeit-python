@@ -75,9 +75,6 @@ def main():
     config.read('config.cfg')
     ig_username = config.get('instagram', 'username')
     ig_password = config.get('instagram', 'password')
-    start_date = config.get('instagram', 'start_date')
-    end_date = config.get('instagram', 'end_date')
-
     igni = instagramNukeIt(ig_username, ig_password)
     igni.login()
     igni.tagged_photos()
