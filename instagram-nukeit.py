@@ -68,6 +68,27 @@ class instagramNukeIt():
         sleep(2)
         self.untag_photo()
 
+    def saved_photos(self):
+        driver = self.driver
+        tagged = driver.get("https://www.instagram.com/" + self.username  + "/saved/")
+        sleep(2)
+        self.unsave_photo()
+
+        
+    def unsave_photo(self):
+        # Recursive function will run until there are no more div's with the class name.
+        driver = self.driver
+        div = driver.find_elements_by_class_name("v1Nh3")
+        if len(div) < 1:
+            return False
+        first_item = div[0]
+        a = first_item.find_element_by_tag_name("a").click()
+        sleep(2)
+        driver.find_element_by_class_name("glyphsSpriteSave__filled__24__grey_9").click()
+        sleep(2)
+        driver.get("https://www.instagram.com/" + self.username  + "/saved/")
+        sleep(2)
+        self.unsave_photo()
 
 
 def main():
@@ -78,6 +99,7 @@ def main():
     igni = instagramNukeIt(ig_username, ig_password)
     igni.login()
     igni.tagged_photos()
+    igni.saved_photos()
 
 
 if __name__ == '__main__':

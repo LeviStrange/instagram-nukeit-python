@@ -1,6 +1,6 @@
 # Instagram Nuke It - Python
 
-A simple script to untag and unlike a users Instagram photos. 
+A simple script to untag, unlike and unsave your Instagram photos. 
 
 ## Getting Started
 
